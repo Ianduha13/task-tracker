@@ -1,11 +1,16 @@
 import TaskForm from "./components/TaskForm"
 import TasksList from "./components/TasksList"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 function App() {
 	return (
 		<div className='App'>
-			<TaskForm />
-			<TasksList />
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' element={<TasksList />} />
+					<Route path='/create-task' element={<TaskForm />} />
+				</Routes>
+			</BrowserRouter>
 		</div>
 	)
 }
